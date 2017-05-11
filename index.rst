@@ -10,6 +10,8 @@ Introduction to Mock
    :maxdepth: 2
    :caption: Contents:
 
+   what-is-mock
+
 
 
 Indices and tables
