@@ -107,18 +107,3 @@ return  n1
 
 .. include:: fibonacci1.py
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
