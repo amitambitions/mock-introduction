@@ -15,4 +15,10 @@ out with functions yourself, or use it to automatically patch with Mock objects 
 .. include:: mock-intro1.py
 
 
+Mock can handle the patching and unpatching for you automatically. You could get away without defining the mock function
+yourself.
+
+.. include:: mock-intro2.py
+
+
 * http://stackoverflow.com/questions/5036920/mocking-out-methods-on-any-instance-of-a-python-class/5044894#5044894
