@@ -66,9 +66,7 @@ test_program1.py
 * It does not define any algorithm.
 * It hard-codes the input and expected output.
 * The hard-coded value of input and output is a result of our knowledge of the expected behavior for "sum" operation.
-* Finally, it uses the "sum" procedure of program1.py. Gives our known input values and verifies that the program
-gave the output as desired.
-
+* Finally, it uses the "sum" procedure of program1.py. Gives our known input values and verifies that the program gave the output as desired.
 
 This part of using a program and verifying the correct behavior using another program is called "unit-testing".
 
