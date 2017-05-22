@@ -1,10 +1,10 @@
 What is Mock?
 =============
 
-The term "mock" is used both as a noun and a verb when it comes to unit-testing. As a developer, when you
-are writing software, you write a companion code that test's the original piece of code that you'd written. This
-second piece of code is written in such as way that it is usually less-complex that the original, uses the original
-an uses human-planted values to check the original piece of code.
+The term "mock" is used both as a noun and a verb when it comes to unit-testing. As a developer, when
+you are writing software, you write a companion code that test's the original piece of code that you'd
+written. This second piece of code is written in such as way that it is usually less-complex that
+the original, uses the original an uses human-planted values to check the original piece of code.
 
 For e.g, if our task is to write a program that does a sum of two numbers, we will write
 
