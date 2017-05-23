@@ -55,3 +55,21 @@ The option is to change the source code.
 
 Which is generally not a good idea. Although, since we control both the code and tests, we might be able to change
 this too.
+
+The other option is to change the test code, and changing the place we patch.
+
+::
+
+    # test_person.py
+    from mock import patch
+    from person import Person
+
+    # mock the get_name function
+    @patch('test_person.get_name')
+    def test_name(mock_get_name):
+        # set a return value for our mock object
+        mock_get_name.return_value = "Bob"
+        person = Person()
+        name = person.name()
+        assert name == "Bob"
+
