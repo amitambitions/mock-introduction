@@ -73,3 +73,51 @@ The other option is to change the test code, and changing the place we patch.
         name = person.name()
         assert name == "Bob"
 
+
+Forgetting the patch the return value
+
+We need to patch the object, which is called. Sometimes we patch the class, and expect that method on the patched
+object will be return our planted value. This is false. We need to access the instance using the return_value and
+access the method and then override it.
+
+
+::
+
+    # person.py
+    class Person(object):
+        def __init__(self):
+            self.pet = Pet()
+        [... other methods ...]
+
+    class Pet(object):
+        def noise(self):
+            return "Woof"
+
+If the requirement is to patch the noise method. This is the wrong way.
+
+
+::
+
+    @patch('person.Pet')
+    def test_dog_noise(mock_pet):
+        mock_pet.noise.return_value = "Meoow"
+        person = Person()
+        assert person.pet.noise() == "Meoow"
+
+What's wrong?
+
+* mock_pet is a mocked class object. We need to access the instance, which done by calling the class.
+* so we need to use mock_pet.return_value.
+
+The correct way to patch this class will be.
+
+::
+
+    @patch('person.Pet')
+    def test_dog_noise(mock_pet):
+        # Here we need an extra `return_value` attribute in order to access the
+        # instance of the class
+        mock_pet.return_value.noise.return_value = "Meoow"
+        person = Person()
+        assert person.pet.noise() == "Meoow"
+
