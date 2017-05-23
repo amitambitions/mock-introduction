@@ -39,3 +39,19 @@ One might then start to write the test case that looks like this.
         assert name == "Bob"
 
 This will not work because the patch is happening at the data source. Not from the place at which it is imported.
+
+
+The option is to change the source code.
+
+::
+
+
+    # person.py
+    import data_source
+
+    class Person(object):
+        def name(self):
+            return data_source.get_name()
+
+Which is generally not a good idea. Although, since we control both the code and tests, we might be able to change
+this too.
