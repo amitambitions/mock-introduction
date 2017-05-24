@@ -121,3 +121,24 @@ The correct way to patch this class will be.
         person = Person()
         assert person.pet.noise() == "Meoow"
 
+
+Patching a decorator
+--------------------
+
+The control of decorator needs to be understood. When python interprets a module, the entire module is loaded /
+scanned. So mocking the decorator later will not have any effect.
+
+::
+
+    def useless_decorator(func):
+        print "Hi, I'm a decorator that does nothing."
+        return func
+
+    class Foo(object):
+        print "Entering Foo class definition"
+
+        @useless_decorator
+        def bar(self):
+            return 42
+
+    print "OK, we're done with that class definition."
