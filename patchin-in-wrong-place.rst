@@ -163,5 +163,16 @@ scanned. So mocking the decorator later will not have any effect.
 Here is an attempt to patch the decorator and test it.
 
 
+::
+
+    from mock import patch
+    from person import Person
+
+    @patch('person.noise_logger', lambda x: x)
+    def test_decorator():
+        person = Person()
+        assert person.pet.noise() == "Woof"
 
 
+This is the wrong way to test since it will be patching at the wrong place. The decorator is already associated with
+nose when the class is imported.
