@@ -142,3 +142,26 @@ scanned. So mocking the decorator later will not have any effect.
             return 42
 
     print "OK, we're done with that class definition."
+
+**function to test**
+
+
+::
+
+    # person.py
+    from decorators import noise_logger
+
+    class Person(object):
+        def __init__(self):
+            self.pet = Pet()
+
+    class Pet(object):
+        @noise_logger
+        def noise(self):
+            return "Woof"
+
+Here is an attempt to patch the decorator and test it.
+
+
+
+
