@@ -177,3 +177,18 @@ The decorator is already associated with nose when the class is imported.
 
 
 The correct way is to patch the decorator before invoking the class itself.
+
+
+::
+
+    from mock import patch
+    patch('decorators.noise_logger', lambda x: x).start()
+    from person import Person
+
+    def test_decorator():
+        person = Person()
+        assert person.pet.noise() == "Woof"
+
+* This takes to declare patch in a separate module.
+* Patches the module.
+* And calls .start on the patch method.
