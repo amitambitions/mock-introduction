@@ -1,5 +1,3 @@
-
-
 Let's consider a data source class
 
 ::
@@ -174,5 +172,8 @@ Here is an attempt to patch the decorator and test it.
         assert person.pet.noise() == "Woof"
 
 
-This is the wrong way to test since it will be patching at the wrong place. The decorator is already associated with
-nose when the class is imported.
+This is the wrong way to test since it will be patching at the wrong place.
+The decorator is already associated with nose when the class is imported.
+
+
+The correct way is to patch the decorator before invoking the class itself.
