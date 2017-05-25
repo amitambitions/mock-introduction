@@ -192,3 +192,16 @@ The correct way is to patch the decorator before invoking the class itself.
 * This takes to declare patch in a separate module.
 * Patches the module.
 * And calls .start on the patch method.
+
+
+
+The start call on mock object, activates the patch.
+
+::
+
+    def start(self):
+        """Activate a patch, returning any created mock."""
+        result = self.__enter__()
+        self._active_patches.append(self)
+        return result
+
