@@ -14,3 +14,15 @@ The simple test example.
 
     if __name__ == '__main__':
         unittest.main()
+
+
+Running this will the output like this.
+
+::
+
+    $ python unittest1.py
+    .
+    ----------------------------------------------------------------------
+    Ran 1 test in 0.000s
+
+    OK
