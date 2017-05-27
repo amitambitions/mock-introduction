@@ -31,3 +31,6 @@ Why Testing
 
 * The whole practise of unit-testing is made much easier by code that is loosely coupled.
 
+
+In python, the standard library module unittest provides facilities to write unittests. There are test runners
+like pytest and nose that provide facilities for test discovery and running tests.
